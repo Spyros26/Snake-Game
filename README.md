@@ -1,5 +1,5 @@
 # Snake-Game
-A Snake Game using Pygame in Python (both Snacks and Supersnacks included!)
+A Snake Game using Pygame in Python 3 (both Snacks and Supersnacks included!)
 
 
 Rules:
