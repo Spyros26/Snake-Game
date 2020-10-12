@@ -3,7 +3,6 @@
 import sys
 import random
 import pygame
-from tkinter import *
 
 
 class cube(object):
