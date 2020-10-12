@@ -4,8 +4,6 @@ import sys
 import random
 import pygame
 from tkinter import *
-from tkinter import messagebox
-
 
 
 class cube(object):
@@ -81,7 +79,15 @@ class snake(object):
 
             keys = pygame.key.get_pressed()
             for key in keys:
-                if keys[pygame.K_LEFT] and self.dirnx != 1:
+                if keys[pygame.K_LEFT] and keys[pygame.K_UP]:
+                    continue
+                elif keys[pygame.K_RIGHT] and keys[pygame.K_UP]:
+                    continue
+                elif keys[pygame.K_LEFT] and keys[pygame.K_DOWN]:
+                    continue
+                elif keys[pygame.K_RIGHT] and keys[pygame.K_DOWN]:
+                    continue 
+                elif keys[pygame.K_LEFT] and self.dirnx != 1:
                     self.dirnx = -1
                     self.dirny = 0
                     self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
@@ -166,15 +172,6 @@ def randomSnack(rows, item):
 
     return (x,y)
 
-def message_box(subject, content):
-    root = Tk()
-    root.attributes("-topmost", True)
-    root.withdraw()
-    messagebox.showinfo(subject, content)
-    try:
-        root.destroy()
-    except:
-        pass
 
 def main():
     global side, rows, s, snake_snack, snake_supersnack
@@ -218,7 +215,6 @@ def main():
         for x in range(len(s.body)):
             if s.body[x].pos in list(map(lambda z:z.pos, s.body[x+1:])):
                 print('Score: ', len(s.body))
-                message_box('Game Over', 'Play again')
                 s.reset((15,15))
                 break
 
