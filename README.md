@@ -11,6 +11,8 @@ Rules:
 #3 Have fun!
 
 
+You can download it by clicking at Snake.exe ----> Download
+
 
 Help from:
 https://www.youtube.com/watch?v=CD4qAhfFuLo
