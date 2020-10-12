@@ -67,7 +67,7 @@ class snake(object):
         self.color = color
         self.head = cube(pos)
         self.body.append(self.head)
-        self.dirnx = 0
+        self.dirnx = 1
         self.dirny = 0
 
     def move(self):
@@ -123,8 +123,8 @@ class snake(object):
         self.body = []
         self.body.append(self.head)
         self.turns = {}
-        self.dirnx = 0
-        self.dirny = 1
+        self.dirnx = 1
+        self.dirny = 0
 
 
     def addCube(self):
@@ -151,7 +151,6 @@ class snake(object):
                 
 
 def redrawWindow(surface):
-    global rows, side, s, snake_snack
     surface.fill((0,0,0)) 
     s.draw(surface)
     snake_snack.draw(surface)
@@ -168,12 +167,11 @@ def randomSnack(rows, item):
             continue
         else:
             break
-
     return (x,y)
 
 
 def main():
-    global side, rows, s, snake_snack, snake_supersnack
+    global side, rows, s, snake_snack, snake_supersnack, count
     pygame.init()
     side = 600
     rows = 30
@@ -215,6 +213,7 @@ def main():
             if s.body[x].pos in list(map(lambda z:z.pos, s.body[x+1:])):
                 print('Score: ', len(s.body))
                 s.reset((15,15))
+                count = 0
                 break
 
         redrawWindow(win)
