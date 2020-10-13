@@ -124,7 +124,7 @@ class snake(object):
         self.body.append(self.head)
         self.turns = {}
         self.dirnx = 1
-        self.dirny = 0
+        self.dirny = 0 
 
 
     def addCube(self):
@@ -213,6 +213,7 @@ def main():
             if s.body[x].pos in list(map(lambda z:z.pos, s.body[x+1:])):
                 print('Score: ', len(s.body))
                 s.reset((15,15))
+                snake_supersnack = snack((-1,-1))
                 count = 0
                 break
 
